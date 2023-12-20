@@ -148,17 +148,34 @@ console.log(wordsToUpperCase);
 // Подсчитайте количество гласных букв в строке
 // Подсказка: вам понадобится метод includes
 const greeting = 'Hello, world!';
-let vowelCount = 0;
-const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+function getCount (string) {
+  let vowelCount = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  for (let letter of string) {
+    if (vowels.includes(letter)) {
+      vowelCount +=1;
+    }
+  }
+  return vowelCount;
+}
+console.log(getCount(greeting));
 
 //Задание 16
 // Объедините все строки массива в одну строку с пробелами между ними
 // const words = ['Hello', 'world', '!'];
+const joinedWords = words.join(' ');
+console.log(joinedWords);
 
 //Задание 17
 // Выведите числа от 1 до 10 в консоль используя цикл while
+let oneTillTen = 1;
+while (oneTillTen <=10) {
+  console.log(oneTillTen);
+  oneTillTen +=1;
+}
 
-//Задание 18
+//Задание 18)
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
 
 //Задание 19
