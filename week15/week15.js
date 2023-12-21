@@ -1,20 +1,14 @@
 //Задание 1
 // Выведите числа от 1 до 10 в консоль
 
-let num = 1;
-while (num <= 10) {
-    console.log(num);
-    num ++;
-}
+let num = 0;
+while (num < 10) console.log(++num);
 
 //Задание 2
 // Выведите чётные числа от 1 до 20 в консоль
 
-let number = 2;
-while (number <= 20) {
-  console.log(number);
-  number += 2;
-}
+let number = 0;
+while (number < 20) console.log(number+=2);
 
 //или
 for (let i = 1; i <= 20; i++) {
@@ -26,10 +20,7 @@ for (let i = 1; i <= 20; i++) {
 //Задание 3
 // Выведите числа от 10 до 1 в консоль в обратном порядке
 let ten = 10;
-while (ten >= 1) {
-  console.log(ten);
-  ten --;
-}
+while (ten) console.log(ten--);
 
 //Задание 4
 // Выведите таблицу умножения на 5 от 1 до 10
@@ -80,7 +71,7 @@ console.log(sumOfNumbers());
 let animals = ["Кот", "Рыба", "Лемур"];
 
 for (let i = 0; i < animals.length; i += 1) {
-  animals[i] = animals[i] + " - прекрасное животное"
+  animals[i] += " - прекрасное животное"
 }
 
 console.log(animals);
@@ -89,7 +80,7 @@ console.log(animals);
 // Выведите символы в строке в консоль
 const str = 'Hello';
 
-for (i = 0; i < str.length; i += 1) {
+for (let i = 0; i < str.length; i += 1) {
   console.log(str[i]);
 }
 
@@ -175,30 +166,162 @@ while (oneTillTen <=10) {
   oneTillTen +=1;
 }
 
-//Задание 18)
+//Задание 18
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
+let tenTillOne = 10;
+while (tenTillOne) {
+  console.log(tenTillOne);
+  tenTillOne -=1;
+}
 
 //Задание 19
 // Проверьте, все ли элементы массива являются положительными числами используя цикл while
 // Подсказка: используйте директиву break
-const allNumbers = [1, 2, 3, -4, 5];
-let allPositive = true;
+// const allNumbers = [1, 2, 3, -4, 5];
 
+// let positiveOfAllNumbers = [];
+//   let allPositive = true;
+
+// // while (number > 0) {
+
+// // }
+// for (number of allNumbers) {
+//   while (number > 0) {
+//     console.log (`${number} является положительным числом`)
+//   } break
+
+  // if (number > 0) {
+  //   console.log(`все элементы массива являются положительными числами`);
+  // } else {
+  //   console.log(`не все элементы массива являются положительными числами`);
+  // }
+// }
+
+
+//   while (number > 0) {
+//     console.log (number)
+//   }
+//   console.log(Boolean(number));
+
+//   console.log(allPositive);
+// if (number < 0) break;
+// }
+
+// console.log(`не все элементы массива являются положительными числами`);
+// console.log(`все элементы массива являются положительными числами`);
+
+
+// console.log(allPositive);
+// }
+// проверяй каждый элемент в массиве
+// элемент положительный? выведи тру
+// элемент отрицательный? выведи фолс
+// // while (true) {
+
+// // }
+
+// function checkPositive (array) {
+//   let allPositive = true;  
+// }
+// for (number of allNumbers) {
+// console.log(number);
+  // while (number < 0) {
+  //   // console.log(number);
+  //   // break
+  // }
+
+// }
+
+// console.log (allPositive);
+
+console.log('начало задания 20');
 //Задание 20
 // Выведите значения элементов массива до первого отрицательного числа используя цикл do...while
 const random = [2, 4, 6, -3, 8, 10];
+let indexOfRandom = 0;
+do {
+  let numberOfRandom = random[indexOfRandom];
+  if (numberOfRandom > 0) {
+    console.log(numberOfRandom);
+    indexOfRandom++;
+  } else {
+    break
+  }  
+} while (indexOfRandom < random.length);
 
+console.log('конец задания 20');
+
+console.log('начало задания 21');
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
+
+let number1 = 1
+do {
+  if (number1 % 3 !== 0) {
+    console.log(number1);
+  } 
+  number1++;
+} while (number1 <= 100);
+
+console.log('конец задания 21');
+
 
 //Задание 22
 // Запросить у пользователя числа, пока сумма введенных чисел не станет больше 100
 
+//ниже код рабочий, закомментировала, чтобы не мешал:
+
+// let sum = 0;
+// do {
+//   let askedFirstNumber = Number(window.prompt('Введите любое число меньше 100'));
+
+//   if (askedFirstNumber < 100) {
+//     sum +=askedFirstNumber;
+//     alert(`Введено чисел на сумму: ${sum}`);
+//   } else {
+//     alert(`Сумма введенных чисел превысила 100`);
+//     break;
+//   }
+// } while (sum < 100);
+// alert(`Больше вводить числа не нужно. Итоговая сумма: ${sum}`);
+
+
+console.log('начало задания 23');
+// console.log('начало задания 23');
 //Задание 23
 // Напишите функцию, которая изменит фоновый цвет всех элементов <h4> на странице на синий цвет
+
+const titles = document.getElementsByTagName('h4');
+for (let title of titles) {
+const makeBlue = () => title.style.backgroundColor = 'blue';
+makeBlue();
+}
+
+console.log('конец задания 23');
 
 //Задание 24
 // Напишите генератор случайных строк до 6 символов
 // Подсказка: используйте методы объекта Math и длину массива alphabet
-let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-let randomString = '';
+// let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+// let randomString = '';
+
+// const getRandomString = () => {
+//   for (let i = 0; i <= 6; i++) {
+//     const randomLetter = Math.floor(Math.random() * alphabet.length);
+//     randomString = alphabet[randomLetter];
+//   }
+// }
+// console.log(getRandomString());
+// const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+// Есть ещё один вариант реализации, где мы будем давать пользователю ввести то количество символов в слове, которое он сам захочет
+// const wordLength = prompt("Сколько символов должно быть в слове")
+// const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+// let result = "";
+// const randomWord = () => {
+//  for (let i = 0; i < wordLength; i++) {
+//   const randomIndex = Math.floor(Math.random() * alphabet.length);
+//   result += alphabet[randomIndex];
+// }
+// }
+// randomWord()
+// document.body.innerText = result;
