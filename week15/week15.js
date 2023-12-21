@@ -174,65 +174,34 @@ while (tenTillOne) {
   tenTillOne -=1;
 }
 
+console.log('начало задания 19');
 //Задание 19
 // Проверьте, все ли элементы массива являются положительными числами используя цикл while
 // Подсказка: используйте директиву break
-// const allNumbers = [1, 2, 3, -4, 5];
+const allNumbers = [1, 2, 3, -4, 5];
+let allPositive = true;
+let indexOfAllNumbers = 0;
 
-// let positiveOfAllNumbers = [];
-//   let allPositive = true;
+while (indexOfAllNumbers < allNumbers.length) {
+  let number = allNumbers[indexOfAllNumbers];
 
-// // while (number > 0) {
+  if (number > 0) {
+    console.log(`${number} - положительное число`);
+  } else {
+    console.log(`${number} - не положительное число`);
+    allPositive = false;
+    break;
+  }
+  indexOfAllNumbers +=1;
+}
 
-// // }
-// for (number of allNumbers) {
-//   while (number > 0) {
-//     console.log (`${number} является положительным числом`)
-//   } break
+if (allPositive) {
+  console.log('Все элементы в массиве - положительные числа');
+} else {
+  console.log('Не все элементы в массиве - положительные числа');
+}
 
-  // if (number > 0) {
-  //   console.log(`все элементы массива являются положительными числами`);
-  // } else {
-  //   console.log(`не все элементы массива являются положительными числами`);
-  // }
-// }
-
-
-//   while (number > 0) {
-//     console.log (number)
-//   }
-//   console.log(Boolean(number));
-
-//   console.log(allPositive);
-// if (number < 0) break;
-// }
-
-// console.log(`не все элементы массива являются положительными числами`);
-// console.log(`все элементы массива являются положительными числами`);
-
-
-// console.log(allPositive);
-// }
-// проверяй каждый элемент в массиве
-// элемент положительный? выведи тру
-// элемент отрицательный? выведи фолс
-// // while (true) {
-
-// // }
-
-// function checkPositive (array) {
-//   let allPositive = true;  
-// }
-// for (number of allNumbers) {
-// console.log(number);
-  // while (number < 0) {
-  //   // console.log(number);
-  //   // break
-  // }
-
-// }
-
-// console.log (allPositive);
+console.log('конец задания 19');
 
 console.log('начало задания 20');
 //Задание 20
@@ -273,10 +242,10 @@ console.log('конец задания 21');
 
 // let sum = 0;
 // do {
-//   let askedFirstNumber = Number(window.prompt('Введите любое число меньше 100'));
+//   let inputNumber = Number(window.prompt('Введите любое число меньше 100'));
 
-//   if (askedFirstNumber < 100) {
-//     sum +=askedFirstNumber;
+//   if (inputNumber < 100) {
+//     sum +=inputNumber;
 //     alert(`Введено чисел на сумму: ${sum}`);
 //   } else {
 //     alert(`Сумма введенных чисел превысила 100`);
@@ -285,9 +254,6 @@ console.log('конец задания 21');
 // } while (sum < 100);
 // alert(`Больше вводить числа не нужно. Итоговая сумма: ${sum}`);
 
-
-console.log('начало задания 23');
-// console.log('начало задания 23');
 //Задание 23
 // Напишите функцию, которая изменит фоновый цвет всех элементов <h4> на странице на синий цвет
 
@@ -297,31 +263,20 @@ const makeBlue = () => title.style.backgroundColor = 'blue';
 makeBlue();
 }
 
-console.log('конец задания 23');
-
+console.log('начало задания 24');
 //Задание 24
 // Напишите генератор случайных строк до 6 символов
 // Подсказка: используйте методы объекта Math и длину массива alphabet
-// let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-// let randomString = '';
+let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+let randomString = '';
+const randomLength = Math.floor(Math.random() * 6) + 1;
+const getRandomString = () => {
+  for (let i = 0; i < randomLength; i++) {
+    const randomIndex = Math.floor(Math.random() * alphabet.length);
+    randomString += alphabet[randomIndex];
+  }
+  console.log(randomString);
+}
+getRandomString();
 
-// const getRandomString = () => {
-//   for (let i = 0; i <= 6; i++) {
-//     const randomLetter = Math.floor(Math.random() * alphabet.length);
-//     randomString = alphabet[randomLetter];
-//   }
-// }
-// console.log(getRandomString());
-// const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-// Есть ещё один вариант реализации, где мы будем давать пользователю ввести то количество символов в слове, которое он сам захочет
-// const wordLength = prompt("Сколько символов должно быть в слове")
-// const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-// let result = "";
-// const randomWord = () => {
-//  for (let i = 0; i < wordLength; i++) {
-//   const randomIndex = Math.floor(Math.random() * alphabet.length);
-//   result += alphabet[randomIndex];
-// }
-// }
-// randomWord()
-// document.body.innerText = result;
+console.log('конец задания 24');
